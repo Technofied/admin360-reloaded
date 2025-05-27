@@ -385,8 +385,8 @@ info:
 # If attend.ticket-invincibility is true, then these messages are used.
 
 invulnerable:
-  on: "&f[&6ADMIN360&f] &a&nInvulnerability Enabled for Ticket Attend"
-  off: "&f[&6ADMIN360&f] &c&nInvulnerability Disabled for Ticket Close"
+  enabled: "&f[&6ADMIN360&f] &a&nInvulnerability Enabled for Ticket Attend"
+  disabled: "&f[&6ADMIN360&f] &c&nInvulnerability Disabled for Ticket Close"
 
 
 
