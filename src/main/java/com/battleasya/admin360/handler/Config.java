@@ -266,8 +266,8 @@ public class Config {
         teleport_failed = config.getString("teleport.failed.message");
         teleport_passed = config.getString("teleport.passed.message");
 
-        invulnerable_on = config.getString("invulnerable.on");
-        invulnerable_off = config.getString("invulnerable.off");
+        invulnerable_on = config.getString("invulnerable.enabled");
+        invulnerable_off = config.getString("invulnerable.disabled");
 
         pending_tickets = config.getString("general.message.pending-tickets");
 

@@ -537,11 +537,13 @@ public class RequestHandler {
         }
 
         if (Config.review_prompt_trigger_enable) {
-            for (String command : Config.review_prompt_trigger_command) {
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command
-                        .replace("<PLAYERNAME>", playerName)
-                        .replace("<ADMINNAME>", adminName));
-            }
+            Bukkit.getScheduler().runTask(plugin, () -> {
+                for (String command : Config.review_prompt_trigger_command) {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command
+                            .replace("<PLAYERNAME>", playerName)
+                            .replace("<ADMINNAME>", adminName));
+                }
+            });
         }
 
         return true;
