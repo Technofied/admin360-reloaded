@@ -324,6 +324,12 @@ public class RequestHandler {
                     .replace("<ADMINNAME>", adminName));
         }
 
+        // Un-invincibilize admin
+        if (Config.attend_invincibility) {
+            User.messagePlayer(admin, Config.invulnerable_off);
+            ((Player) admin).setInvulnerable(false);
+        }
+
     }
 
 
