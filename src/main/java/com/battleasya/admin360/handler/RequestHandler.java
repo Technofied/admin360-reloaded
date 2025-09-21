@@ -95,6 +95,11 @@ public class RequestHandler {
             }
         }
 
+        // play sound for online staff
+        if (Config.create_passed_sound_effect_enable) {
+            Admin.playSoundAdmins(Config.create_passed_sound_effect_sound);
+        }
+
     }
 
 

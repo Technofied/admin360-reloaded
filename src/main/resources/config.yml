@@ -166,6 +166,12 @@ create:
       enable: false
       command:
         - "tm msg <PLAYERNAME> &b\n&6Ticket Created &7(&fPosition: &6<POSITION>&7)"
+    
+    # Notify all online staff members with a sound. Default sound is the minecraft xp gain sound.
+    # sound should be a resource location.
+    sound-effect:
+      enable: false
+      sound: "entity.experience_orb.pickup"
 
 
 

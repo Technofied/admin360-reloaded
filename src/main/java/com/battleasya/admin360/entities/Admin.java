@@ -27,6 +27,19 @@ public class Admin {
         }
     }
 
+    /* Play a sound effect for all the admins online */
+    public static void playSoundAdmins(String sound) {
+
+        for (UUID adminID : adminList) {
+            
+            Player admin = Bukkit.getPlayer(adminID);
+
+            if (admin != null) {
+                User.playSoundPlayer(admin, sound);
+            }
+        }
+    }
+
     /* Refresh all the admins in the list */
     public static void refreshAdmLst() {
         Collection<? extends Player> playerList = Bukkit.getOnlinePlayers();

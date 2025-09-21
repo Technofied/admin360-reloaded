@@ -53,6 +53,9 @@ public class Config {
     public static boolean create_passed_trigger_enable;
     public static List<String> create_passed_trigger_command;
 
+    public static boolean create_passed_sound_effect_enable;
+    public static String create_passed_sound_effect_sound;
+
     public static String cancel_failed_no_ticket;
     public static String cancel_failed_attending;
     public static String cancel_failed_restricted;
@@ -228,6 +231,9 @@ public class Config {
 
         create_passed_trigger_enable = config.getBoolean("create.passed.trigger.enable");
         create_passed_trigger_command = config.getStringList("create.passed.trigger.command");
+
+        create_passed_sound_effect_enable = config.getBoolean("create.passed.sound-effect.enable");
+        create_passed_sound_effect_sound = config.getString("create.passed.sound-effect.sound");
 
         cancel_failed_no_ticket = config.getString("cancel.failed.message.no-ticket");
         cancel_failed_attending = config.getString("cancel.failed.message.attending");
