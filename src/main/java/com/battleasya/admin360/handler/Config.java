@@ -110,6 +110,9 @@ public class Config {
     public static String close_failed;
     public static String close_passed;
 
+    public static boolean close_passed_trigger_enable;
+    public static List<String> close_passed_trigger_command;
+
     public static boolean review_reminder_enable;
     public static int review_reminder_interval;
 
@@ -283,6 +286,9 @@ public class Config {
 
         close_failed = config.getString("close.failed.message");
         close_passed = config.getString("close.passed.message");
+
+        close_passed_trigger_enable = config.getBoolean("close.passed.trigger.enable");
+        close_passed_trigger_command = config.getStringList("close.passed.trigger.command");
 
         review_reminder_enable = config.getBoolean("review.reminder.enable");
         review_reminder_interval = config.getInt("review.reminder.interval");

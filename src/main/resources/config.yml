@@ -463,6 +463,12 @@ close:
   passed:
     message: "&f[&6ADMIN360&f] &7You have successfully closed &6<PLAYERNAME>&7's request."
 
+    # Run console commands on ticket close. Default example using /say.
+    trigger:
+      enable: false
+      command:
+        - "say A ticket has been closed!"
+
 
 
 ############################################################

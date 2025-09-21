@@ -435,6 +435,14 @@ public class RequestHandler {
             ((Player) admin).setInvulnerable(false);
         }
 
+        // trigger custom commands
+        if (Config.close_passed_trigger_enable) {
+            for (String command : Config.close_passed_trigger_command) {
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command
+                        .replace("<PLAYERNAME>", playerName)
+                        .replace("<ADMINNAME>", adminName));
+            }
+        }
     }
 
 
