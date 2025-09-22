@@ -4,6 +4,8 @@ import com.battleasya.admin360.Admin360;
 import com.battleasya.admin360.handler.Config;
 import com.battleasya.admin360.handler.Permission;
 import net.md_5.bungee.api.ChatColor;
+
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -18,6 +20,15 @@ public class User {
 
     public static void messagePlayer(CommandSender player, String message) {
         player.sendMessage(translate(message));
+    }
+
+    public static void playSoundPlayer(CommandSender player, String sound) {
+
+        String command = "execute at <PLAYERNAME> run playsound <SOUND> master <PLAYERNAME> ~ ~ ~";
+
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command
+                .replace("<SOUND>", sound)
+                .replace("<PLAYERNAME>", player.getName())); 
     }
 
     public static String translate(String message) {

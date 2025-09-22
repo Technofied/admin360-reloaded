@@ -53,6 +53,9 @@ public class Config {
     public static boolean create_passed_trigger_enable;
     public static List<String> create_passed_trigger_command;
 
+    public static boolean create_passed_sound_effect_enable;
+    public static String create_passed_sound_effect_sound;
+
     public static String cancel_failed_no_ticket;
     public static String cancel_failed_attending;
     public static String cancel_failed_restricted;
@@ -109,6 +112,9 @@ public class Config {
 
     public static String close_failed;
     public static String close_passed;
+
+    public static boolean close_passed_trigger_enable;
+    public static List<String> close_passed_trigger_command;
 
     public static boolean review_reminder_enable;
     public static int review_reminder_interval;
@@ -226,6 +232,9 @@ public class Config {
         create_passed_trigger_enable = config.getBoolean("create.passed.trigger.enable");
         create_passed_trigger_command = config.getStringList("create.passed.trigger.command");
 
+        create_passed_sound_effect_enable = config.getBoolean("create.passed.sound-effect.enable");
+        create_passed_sound_effect_sound = config.getString("create.passed.sound-effect.sound");
+
         cancel_failed_no_ticket = config.getString("cancel.failed.message.no-ticket");
         cancel_failed_attending = config.getString("cancel.failed.message.attending");
         cancel_failed_completing = config.getString("cancel.failed.message.completing");
@@ -283,6 +292,9 @@ public class Config {
 
         close_failed = config.getString("close.failed.message");
         close_passed = config.getString("close.passed.message");
+
+        close_passed_trigger_enable = config.getBoolean("close.passed.trigger.enable");
+        close_passed_trigger_command = config.getStringList("close.passed.trigger.command");
 
         review_reminder_enable = config.getBoolean("review.reminder.enable");
         review_reminder_interval = config.getInt("review.reminder.interval");

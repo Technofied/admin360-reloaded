@@ -95,6 +95,11 @@ public class RequestHandler {
             }
         }
 
+        // play sound for online staff
+        if (Config.create_passed_sound_effect_enable) {
+            Admin.playSoundAdmins(Config.create_passed_sound_effect_sound);
+        }
+
     }
 
 
@@ -319,6 +324,12 @@ public class RequestHandler {
                     .replace("<ADMINNAME>", adminName));
         }
 
+        // Un-invincibilize admin
+        if (Config.attend_invincibility) {
+            User.messagePlayer(admin, Config.invulnerable_off);
+            ((Player) admin).setInvulnerable(false);
+        }
+
     }
 
 
@@ -435,6 +446,14 @@ public class RequestHandler {
             ((Player) admin).setInvulnerable(false);
         }
 
+        // trigger custom commands
+        if (Config.close_passed_trigger_enable) {
+            for (String command : Config.close_passed_trigger_command) {
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command
+                        .replace("<PLAYERNAME>", playerName)
+                        .replace("<ADMINNAME>", adminName));
+            }
+        }
     }
 
 

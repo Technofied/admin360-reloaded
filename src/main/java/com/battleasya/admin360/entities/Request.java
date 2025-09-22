@@ -2,6 +2,11 @@ package com.battleasya.admin360.entities;
 
 import java.util.*;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+
+import com.battleasya.admin360.handler.Config;
+
 public class Request {
 
     public static int completedToday = 0;
@@ -128,7 +133,15 @@ public class Request {
         // Remove from requestAttending
         for (Map.Entry<UUID, Request> entry : requestAttending.entrySet()) {
             if (entry.getValue().getPlayerID().equals(playerID)){
-                removeFromAtdLst(entry.getKey());
+                UUID adminID = entry.getKey();
+
+                // Un-invincibilize admin
+                if (Config.attend_invincibility) {
+                    Player admin = Bukkit.getPlayer(adminID);
+                    User.messagePlayer(admin, Config.invulnerable_off);
+                    ((Player) admin).setInvulnerable(false);
+                }   
+                removeFromAtdLst(adminID);
                 break; // prevent concurrent modification error
             }
         }
