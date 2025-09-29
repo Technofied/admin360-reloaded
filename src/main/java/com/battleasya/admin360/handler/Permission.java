@@ -16,7 +16,8 @@ public enum Permission {
     VIEW_HP_TOP("admin360.staff.hptop"),
     VIEW_HISTORY("admin360.staff.history"),
     RESET_HP_STATS("admin360.staff.hpreset"),
-    RELOAD_CONFIG("admin360.staff.reload");
+    RELOAD_CONFIG("admin360.staff.reload"),
+    FLY("admin360.staff.fly");
 
     private final String permissionNode;
 

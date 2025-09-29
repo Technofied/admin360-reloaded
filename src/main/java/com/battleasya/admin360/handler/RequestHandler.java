@@ -330,6 +330,10 @@ public class RequestHandler {
             ((Player) admin).setInvulnerable(false);
         }
 
+        // Reset flight mode
+        ((Player) admin).setAllowFlight(false);
+        ((Player) admin).setFlying(false);
+
     }
 
 
@@ -445,6 +449,10 @@ public class RequestHandler {
             User.messagePlayer(admin, Config.invulnerable_off);
             ((Player) admin).setInvulnerable(false);
         }
+
+        // Reset flight mode
+        ((Player) admin).setAllowFlight(false);
+        ((Player) admin).setFlying(false);
 
         // trigger custom commands
         if (Config.close_passed_trigger_enable) {
@@ -912,6 +920,23 @@ public class RequestHandler {
 
             }
         }).runTaskAsynchronously(plugin);
+
+    }
+
+
+    public void toggleFly(CommandSender sender) {
+
+        Player player = (Player) sender;
+        
+        if (player.getAllowFlight()) {
+            player.setAllowFlight(false);
+            player.setFlying(false);
+            User.messagePlayer(sender, Config.fly_disabled);
+        } else {
+            player.setAllowFlight(true);
+            player.setFlying(true);
+            User.messagePlayer(sender, Config.fly_enabled);
+        }
 
     }
 

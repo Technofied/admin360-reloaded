@@ -96,6 +96,9 @@ public class Config {
     public static String teleport_failed;
     public static String teleport_passed;
 
+    public static String fly_enabled;
+    public static String fly_disabled;
+
     public static String invulnerable_on;
     public static String invulnerable_off;
 
@@ -274,6 +277,9 @@ public class Config {
 
         teleport_failed = config.getString("teleport.failed.message");
         teleport_passed = config.getString("teleport.passed.message");
+
+        fly_enabled = config.getString("fly.enabled.message");
+        fly_disabled = config.getString("fly.disabled.message");
 
         invulnerable_on = config.getString("invulnerable.enabled");
         invulnerable_off = config.getString("invulnerable.disabled");

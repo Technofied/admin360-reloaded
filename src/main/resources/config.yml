@@ -100,6 +100,7 @@ help:
       - "&6/ticket hptop [line] &f- &7View HP leaderboard."
       - "&6/ticket history [line] &f- &7View HP history."
       - "&6/ticket hpreset <name> &f- &7Reset HP stats."
+      - "&6/ticket fly &f- &7Toggle flight mode."
       - "&b/admin360 reload &f- &7Reload the config file."
       - "&7*&fParameters: [Optional] <Compulsory>"
       - "&7&m---------------------------------"
@@ -357,6 +358,22 @@ teleport:
     message: "&f[&6ADMIN360&f] &c&nTeleport Failed&7 You are not attending to any request at the moment."
   passed:
     message: "&f[&6ADMIN360&f] &7You have been teleported to &6<PLAYERNAME>&7."
+
+
+
+############################################################
+# +------------------------------------------------------+ #
+# |                       Flight                         | #
+############################################################
+
+# /ticket fly: Toggle flight mode.
+# Requires the permission "admin360.staff.fly".
+
+fly:
+  enabled:
+    message: "&f[&6ADMIN360&f] &a&nFlight Enabled&7 You can now fly!"
+  disabled:
+    message: "&f[&6ADMIN360&f] &c&nFlight Disabled&7 You can no longer fly."
 
 
 

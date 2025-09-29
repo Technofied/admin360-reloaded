@@ -30,6 +30,7 @@ permissions:
           admin360.staff.hptop: true
           admin360.staff.history: true
           admin360.staff.hpreset: true
+          admin360.staff.fly: true
           admin360.staff.reload: true
       admin360.player.*:
         description: Admin360 Player Commands

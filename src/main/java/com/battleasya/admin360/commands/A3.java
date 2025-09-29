@@ -150,6 +150,12 @@ public class A3 implements CommandExecutor {
                     }
                     return true;
 
+                case "fly":
+                    if (User.hasPermission(sender, Permission.FLY, true)) {
+                        plugin.getRequestHandler().toggleFly(sender);
+                    }
+                    return true;
+
             }
 
         }

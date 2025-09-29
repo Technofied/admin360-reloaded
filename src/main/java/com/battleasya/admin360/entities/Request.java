@@ -135,12 +135,20 @@ public class Request {
             if (entry.getValue().getPlayerID().equals(playerID)){
                 UUID adminID = entry.getKey();
 
-                // Un-invincibilize admin
-                if (Config.attend_invincibility) {
-                    Player admin = Bukkit.getPlayer(adminID);
-                    User.messagePlayer(admin, Config.invulnerable_off);
-                    ((Player) admin).setInvulnerable(false);
-                }   
+                // Get admin player once
+                Player admin = Bukkit.getPlayer(adminID);
+                if (admin != null) {
+                    // Un-invincibilize admin
+                    if (Config.attend_invincibility) {
+                        User.messagePlayer(admin, Config.invulnerable_off);
+                        admin.setInvulnerable(false);
+                    }
+
+                    // Reset flight mode
+                    admin.setAllowFlight(false);
+                    admin.setFlying(false);
+                }
+                
                 removeFromAtdLst(adminID);
                 break; // prevent concurrent modification error
             }
